@@ -11,7 +11,7 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo -e "${GREEN}=== GONKA NODE AUTO-INSTALLER (FULL AUTO, NO RPC WAIT) ===${NC}"
+echo -e "${GREEN}=== GONKA NODE AUTO-INSTALLER ===${NC}"
 
 # 1. Environment Setup
 echo -e "${YELLOW}[1/11] Preparing Environment...${NC}"
