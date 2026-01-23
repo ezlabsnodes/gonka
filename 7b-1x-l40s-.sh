@@ -118,7 +118,7 @@ cat <<'EOF' > node-config.json
         "host": "inference",
         "inference_port": 5000,
         "poc_port": 8080,
-        "max_concurrent": 250,
+        "max_concurrent": 150,
         "models": {
             "Qwen/Qwen2.5-7B-Instruct": {
                 "args": [
