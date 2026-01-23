@@ -95,7 +95,7 @@ EOF
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 500,
+  "max_concurrent": 150,
   "models": {
     "Qwen/Qwen3-32B-FP8": {
       "args": [
