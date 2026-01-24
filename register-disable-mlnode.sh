@@ -54,7 +54,7 @@ if [ "$MAIN_CHOICE" == "1" ]; then
     "Qwen/Qwen2.5-7B-Instruct": {
       "args": [
         "--quantization", "fp8",
-        "--gpu-memory-utilization", "0.9",
+        "--gpu-memory-utilization", "0.85",
         "--dtype", "bfloat16"
       ]
     }
