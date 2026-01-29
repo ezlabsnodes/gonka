@@ -3,7 +3,7 @@
 # ==============================
 #  GONKA ADMIN ML NODE HELPER
 #  (Register / Enable / Disable)
-#  Run on SERVER-CPU (Network Node)
+#  Run on SERVER-CPU (Chain Node)
 # ==============================
 
 GREEN='\033[0;32m'
@@ -41,7 +41,7 @@ if [ "$MAIN_CHOICE" == "1" ]; then
 
   case "$MODEL_CHOICE" in
     1)
-      echo -e "${YELLOW}Registering ML Node: 1x L40S (Qwen2.5-7B-Instruct)...${NC}"
+      echo -e "${YELLOW}Registering ML Node: 1x L40S (Qwen/Qwen3-32B-FP8)...${NC}"
       JSON_BODY=$(cat <<EOF
 {
   "id": "$NODE_ID",
@@ -53,7 +53,7 @@ if [ "$MAIN_CHOICE" == "1" ]; then
     "Qwen/Qwen3-32B-FP8": {
       "args": [
         "--quantization", "fp8",
-        "--gpu-memory-utilization", "0.9"
+        "--gpu-memory-utilization", "0.85"
       ]
     }
   }
@@ -63,29 +63,6 @@ EOF
       ;;
 
     2)
-      echo -e "${YELLOW}Registering ML Node: 2x L40S (Qwen2.5-7B-Instruct)...${NC}"
-      JSON_BODY=$(cat <<EOF
-{
-  "id": "$NODE_ID",
-  "host": "$GPU_HOST",
-  "inference_port": 5050,
-  "poc_port": 8080,
-  "max_concurrent": 150,
-  "models": {
-    "Qwen/Qwen3-32B-FP8": {
-      "args": [
-        "--tensor-parallel-size", "2",
-        "--quantization", "fp8",
-        "--gpu-memory-utilization", "0.9"
-      ]
-    }
-  }
-}
-EOF
-)
-      ;;
-
-    3)
       echo -e "${YELLOW}Registering ML Node: 2x L40S (Qwen/Qwen3-32B-FP8)...${NC}"
       JSON_BODY=$(cat <<EOF
 {
