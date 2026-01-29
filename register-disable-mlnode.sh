@@ -34,9 +34,8 @@ if [ "$MAIN_CHOICE" == "1" ]; then
   echo -e "${GREEN}Select ML Node Profile:${NC}"
   echo "1. 1x L40S (Qwen/Qwen3-32B-FP8)"
   echo "2. 2x L40S (Qwen/Qwen3-32B-FP8)"
-  #echo "3. 2x L40S (Qwen/Qwen3-32B-FP8)"
   echo
-  read -p "Select (1/2/3): " MODEL_CHOICE
+  read -p "Select (1/2): " MODEL_CHOICE
 
   echo
 
