@@ -53,7 +53,7 @@ if [ "$MAIN_CHOICE" == "1" ]; then
     "Qwen/Qwen3-32B-FP8": {
       "args": [
         "--quantization", "fp8",
-        "--gpu-memory-utilization", "0.85"
+        "--gpu-memory-utilization", "0.9"
       ]
     }
   }
