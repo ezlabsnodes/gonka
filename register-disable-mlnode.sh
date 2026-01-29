@@ -32,9 +32,9 @@ if [ "$MAIN_CHOICE" == "1" ]; then
 
   echo
   echo -e "${GREEN}Select ML Node Profile:${NC}"
-  echo "1. 1x L40S (Qwen2.5-7B-Instruct)"
-  echo "2. 2x L40S (Qwen2.5-7B-Instruct)"
-  echo "3. 2x L40S (Qwen/Qwen3-32B-FP8)"
+  echo "1. 1x L40S (Qwen/Qwen3-32B-FP8)"
+  echo "2. 2x L40S (Qwen/Qwen3-32B-FP8)"
+  #echo "3. 2x L40S (Qwen/Qwen3-32B-FP8)"
   echo
   read -p "Select (1/2/3): " MODEL_CHOICE
 
@@ -71,9 +71,9 @@ EOF
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 500,
+  "max_concurrent": 150,
   "models": {
-    "Qwen/Qwen2.5-7B-Instruct": {
+    "Qwen/Qwen3-32B-FP8": {
       "args": [
         "--tensor-parallel-size", "2",
         "--quantization", "fp8",
