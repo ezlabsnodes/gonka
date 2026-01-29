@@ -49,13 +49,12 @@ if [ "$MAIN_CHOICE" == "1" ]; then
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 150,
+  "max_concurrent": 50,
   "models": {
-    "Qwen/Qwen2.5-7B-Instruct": {
+    "Qwen/Qwen3-32B-FP8": {
       "args": [
         "--quantization", "fp8",
-        "--gpu-memory-utilization", "0.85",
-        "--dtype", "bfloat16"
+        "--gpu-memory-utilization", "0.85"
       ]
     }
   }
