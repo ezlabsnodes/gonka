@@ -71,13 +71,14 @@ EOF
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 150,
+  "max_concurrent": 80,
   "models": {
     "Qwen/Qwen3-32B-FP8": {
       "args": [
-        "--tensor-parallel-size", "2",
         "--quantization", "fp8",
-        "--gpu-memory-utilization", "0.9"
+        "--tensor-parallel-size", "2",
+        "--gpu-memory-utilization", "0.88",
+        "--max-model-len", "16384"
       ]
     }
   }
