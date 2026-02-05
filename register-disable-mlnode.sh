@@ -32,8 +32,8 @@ if [ "$MAIN_CHOICE" == "1" ]; then
 
   echo
   echo -e "${GREEN}Select ML Node Profile:${NC}"
-  echo "1. 1x L40S (Qwen/Qwen3-32B-FP8)"
-  echo "2. 2x L40S (Qwen/Qwen3-32B-FP8)"
+  echo "1. Qwen/Qwen3-235B-A22B-Instruct-2507-FP8"
+  echo "2. Qwen/Qwen3-235B-A22B-Instruct-2507-FP8"
   echo
   read -p "Select (1/2): " MODEL_CHOICE
 
@@ -48,13 +48,13 @@ if [ "$MAIN_CHOICE" == "1" ]; then
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 50,
+  "max_concurrent": 32,
   "models": {
-    "Qwen/Qwen3-32B-FP8": {
+    "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
         "--quantization", "fp8",
-        "--gpu-memory-utilization", "0.88",
-        "--max-model-len", "8192"
+        "--tensor-parallel-size", "8",
+        "--gpu-memory-utilization", "0.9"
       ]
     }
   }
@@ -73,12 +73,11 @@ EOF
   "poc_port": 8080,
   "max_concurrent": 80,
   "models": {
-    "Qwen/Qwen3-32B-FP8": {
+    "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
         "--quantization", "fp8",
-        "--tensor-parallel-size", "2",
-        "--gpu-memory-utilization", "0.88",
-        "--max-model-len", "16384"
+        "--tensor-parallel-size", "8",
+        "--gpu-memory-utilization", "0.9"
       ]
     }
   }
