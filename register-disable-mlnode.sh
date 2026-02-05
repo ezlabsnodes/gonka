@@ -48,28 +48,12 @@ if [ "$MAIN_CHOICE" == "1" ]; then
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 24,
+  "max_concurrent": 200,
 
   "models": {
     "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
-        "--quantization", "fp8",
-        "--tensor-parallel-size", "8",
-
-        "--dtype", "bfloat16",
-        "--kv-cache-dtype", "fp8",
-
-        "--max-model-len", "16384",
-        "--gpu-memory-utilization", "0.90",
-
-        "--disable-custom-all-reduce",
-        "--enforce-eager",
-
-        "--trust-remote-code",
-        "--disable-log-stats",
-
-        "--enable-chunked-prefill",
-        "--max-num-batched-tokens", "16384"
+        "--tensor-parallel-size", "4"
       ]
     }
   }
@@ -86,13 +70,11 @@ EOF
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 80,
+  "max_concurrent": 300,
   "models": {
     "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
-        "--quantization", "fp8",
-        "--tensor-parallel-size", "8",
-        "--gpu-memory-utilization", "0.9"
+        "--tensor-parallel-size", "4"
       ]
     }
   }
