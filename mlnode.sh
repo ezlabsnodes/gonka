@@ -88,13 +88,13 @@ fi
 # MODEL SELECTION
 # =========================
 echo -e "\n${YELLOW}Pilih model untuk didownload:${NC}"
-echo "  1) Qwen/Qwen2.5-7B-Instruct"
-echo "  2) Qwen/Qwen3-32B-FP8"
+echo "  1) Qwen/Qwen3-235B-A22B-Instruct-2507-FP8"
+echo "  2) Qwen/Qwen3-235B-A22B-Instruct-2507-FP8"
 read -p "Pilihan [1-2]: " MODEL_CHOICE
 
 case "$MODEL_CHOICE" in
-  1) MODEL_ID="Qwen/Qwen2.5-7B-Instruct" ;;
-  2) MODEL_ID="Qwen/Qwen3-32B-FP8" ;;
+  1) MODEL_ID="Qwen/Qwen3-235B-A22B-Instruct-2507-FP8" ;;
+  2) MODEL_ID="Qwen/Qwen3-235B-A22B-Instruct-2507-FP8" ;;
   *) echo -e "${RED}Pilihan tidak valid.${NC}"; exit 1 ;;
 esac
 
