@@ -53,7 +53,7 @@ if [ "$MAIN_CHOICE" == "1" ]; then
   "models": {
     "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
-        "--tensor-parallel-size", "4",
+        "--tensor-parallel-size", "4"
       ]
     }
   }
