@@ -22,7 +22,7 @@ export PATH="$HOME/.local/bin:$PATH"
 echo -e "${YELLOW}[2/11] Downloading Wallet Binary & Setup HOT Wallet...${NC}"
 
 if [ ! -f "./inferenced" ]; then
-  wget -q -O inferenced-linux-amd64.zip "https://github.com/gonka-ai/gonka/releases/download/release%2Fv0.2.6-post1/inferenced-linux-amd64.zip"
+  wget -q -O inferenced-linux-amd64.zip "https://github.com/gonka-ai/gonka/releases/download/release%2Fv0.2.9/inferenced-linux-amd64.zip"
   unzip -o inferenced-linux-amd64.zip && chmod +x inferenced
 fi
 
@@ -120,7 +120,7 @@ cat <<'EOF' > node-config.json
         "poc_port": 8080,
         "max_concurrent": 150,
         "models": {
-            "Qwen/Qwen3-32B-FP8": {
+            "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
                 "args": [
                     "--tensor-parallel-size", "2",
                     "--quantization", "fp8",
@@ -145,7 +145,7 @@ if [ ! -x "$HF_CMD" ]; then
     exit 1
 fi
 
-$HF_CMD download Qwen/Qwen2.5-7B-Instruct
+$HF_CMD download Qwen/Qwen3-235B-A22B-Instruct-2507-FP8
 
 # 7. Pull Containers
 echo -e "${YELLOW}[7/11] Pulling Docker Images...${NC}"
