@@ -48,15 +48,12 @@ if [ "$MAIN_CHOICE" == "1" ]; then
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 400,
+  "max_concurrent": 200,
 
   "models": {
     "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
-        "--tensor-parallel-size", "8",
-        "--dtype", "bfloat16",
-        "--max-model-len", "8192",
-        "--gpu-memory-utilization","0.95"
+        "--tensor-parallel-size", "4",
       ]
     }
   }
@@ -73,7 +70,7 @@ EOF
   "host": "$GPU_HOST",
   "inference_port": 5050,
   "poc_port": 8080,
-  "max_concurrent": 400,
+  "max_concurrent": 200,
   "models": {
     "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
