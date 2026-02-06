@@ -118,13 +118,11 @@ cat <<'EOF' > node-config.json
         "host": "inference",
         "inference_port": 5000,
         "poc_port": 8080,
-        "max_concurrent": 150,
+        "max_concurrent": 500,
         "models": {
             "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
                 "args": [
-                    "--tensor-parallel-size", "2",
-                    "--quantization", "fp8",
-                    "--gpu-memory-utilization", "0.9"
+                    "--tensor-parallel-size", "4"
                 ]
             }
         }
