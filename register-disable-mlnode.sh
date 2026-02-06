@@ -53,7 +53,10 @@ if [ "$MAIN_CHOICE" == "1" ]; then
   "models": {
     "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
-        "--tensor-parallel-size", "8"
+        "--tensor-parallel-size", "8",
+        "--dtype", "bfloat16",
+        "--max-model-len", "8192",
+        "--gpu-memory-utilization","0.95"
       ]
     }
   }
@@ -74,7 +77,10 @@ EOF
   "models": {
     "Qwen/Qwen3-235B-A22B-Instruct-2507-FP8": {
       "args": [
-        "--tensor-parallel-size", "4"
+        "--tensor-parallel-size", "4",
+        "--dtype", "bfloat16",
+        "--max-model-len", "8192",
+        "--gpu-memory-utilization","0.95"
       ]
     }
   }
