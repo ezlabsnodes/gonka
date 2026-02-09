@@ -84,7 +84,7 @@ else
     exit 1
 fi
 # =========================
-REPLACE 
+# REPLACE 
 # =========================
 cat > ~/gonka/deploy/join/docker-compose.mlnode.yml << 'EOF'
 services:
